@@ -1,0 +1,4 @@
+CUDA_VISIBLE_DEVICES=GPU-8c36d9dd-4315-583f-c95d-c0e7575f3433 ./mig >> ../saidas/gpu1
+CUDA_VISIBLE_DEVICES=GPU-8c36d9dd-4315-583f-c95d-c0e7575f3433 ./mig >> ../saidas/gpu2
+CUDA_VISIBLE_DEVICES=GPU-8c36d9dd-4315-583f-c95d-c0e7575f3433 ./mig >> ../saidas/gpu3
+CUDA_VISIBLE_DEVICES=GPU-8c36d9dd-4315-583f-c95d-c0e7575f3433 ./mig >> ../saidas/gpu4

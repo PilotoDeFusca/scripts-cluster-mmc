@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=MIG-bbc0f904-20ba-5ff0-aa76-754fa93730ba ./mig >> ../saidas/mig1 

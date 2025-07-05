@@ -1,0 +1,29 @@
+
+#!/bin/bash
+#----------------------------------------------------------
+# Job name
+#PBS -N test
+
+# Name of stdout output file
+#PBS -o /home/pabloh/2025/saidas/lixeira/out/
+#PBS -e /home/pabloh/2025/saidas/lixeira/err/
+# Total number of nodes and MPI tasks/node requested
+#PBS -l nodes=compute-1-1:ppn=4
+
+# Run time (hh:mm:ss) - 1.5 hours
+#PBS -l walltime=01:30:00
+#----------------------------------------------------------
+
+# Change to submission directory
+cd $PBS_O_WORKDIR
+
+cat $PBS_NODEFILE
+
+# Launch MPI-based executable
+time CUDA_VISIBLE_DEVICES=MIG-365f9ce1-c091-57a7-8ef3-4cbb45dcca47 ./mig >> /home/pabloh/2025/saidas/compute-1-1/ep/1g-20gb/mig-ep-57-MIG-365f9ce1-c091-57a7-8ef3-4cbb45dcca47 &
+time CUDA_VISIBLE_DEVICES=MIG-40144944-d4a9-585d-978e-1ace55172139 ./mig >> /home/pabloh/2025/saidas/compute-1-1/ep/1g-20gb/mig-ep-57-MIG-40144944-d4a9-585d-978e-1ace55172139 &
+time CUDA_VISIBLE_DEVICES=MIG-0ebc0c9f-adc4-59a6-af10-200d49046bb5 ./mig >> /home/pabloh/2025/saidas/compute-1-1/ep/1g-20gb/mig-ep-57-MIG-0ebc0c9f-adc4-59a6-af10-200d49046bb5 &
+time CUDA_VISIBLE_DEVICES=MIG-effedeec-21b5-5ad2-904d-f4d06708ac4d ./mig >> /home/pabloh/2025/saidas/compute-1-1/ep/1g-20gb/mig-ep-57-MIG-effedeec-21b5-5ad2-904d-f4d06708ac4d &
+
+sleep 60
+
